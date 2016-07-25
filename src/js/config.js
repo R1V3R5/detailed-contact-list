@@ -15,6 +15,11 @@ function config ($stateProvider, $urlRouterProvider) {
       url: '/add',
       templateUrl: 'templates/add.tmpl.html',
       controller: 'AddController as vm'
+    })
+    .state('root.single', {
+      url: '/contact/:id',
+      templateUrl: 'templates/single.tmpl.html',
+      controller: 'SingleController as vm'
     });
 
   $urlRouterProvider.otherwise('/')
