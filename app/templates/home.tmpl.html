@@ -1,5 +1,18 @@
 <h1 class="title">Home Page</h1>
 
-<ul>
-  <li ng-repeat="contact in vm.contacts"><a href="/#/contact/{{contact._id}}">{{ contact.name }}</a></li>
-</ul>
+<article class="media" ng-repeat="contact in vm.contacts">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img ng-src="{{contact.photoUrl}}" alt="{{contact.name}}">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <br>
+      <p>
+        <a href="/#/contact/{{contact._id}}">{{ contact.name }}</a>
+      </p>
+    </div>
+  </div>
+
+</article>

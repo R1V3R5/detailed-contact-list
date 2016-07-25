@@ -12,13 +12,36 @@ img { max-width: 100%; }
 }
 
 .card {
-  width: 200px;
+  width: 500px;
   float: left;
   margin: 0 15px 15px 0;
-  cursor: pointer;
-  &:nth-child(3n+1) {
-    margin-right: 0;
+
+}
+.card-image {
+  background: #A7D076;
+  height: 200px;
+  position: relative;
+  img {
+    position: absolute;
+    top: 30px;
+    left: 175px;
+    border-radius: 100px;
   }
+  .fa-trash {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+  // .fa-arrow-left {
+    // position: absolute;
+    // top: 15px;
+    // left: 15px;
+    // color: black;
+  // }
+}
+
+.image img {
+    border-radius: 50%;
 }
 
 .pad-left {

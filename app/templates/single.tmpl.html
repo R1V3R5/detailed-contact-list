@@ -1,1 +1,17 @@
-{{vm.contact.name}}
+<div class="card">
+  <div class="card-image">
+    <a href="/#/"><i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+    <figure class="image is-128x128">
+      <img src="{{ vm.contact.photoUrl}}" alt="">
+    </figure>
+    <i class="fa fa-trash" ng-click="vm.delete(vm.contact._id)"></i>
+  </div>
+  <div class="card-content">
+    <ul>
+      <li><i class="fa fa-user" aria-hidden="true"></i> {{ vm.contact.name }}</li>
+      <li><i class="fa fa-envelope" aria-hidden="true"></i> {{ vm.contact.email }}</li>
+      <li><i class="fa fa-phone" aria-hidden="true"></i> {{ vm.contact.phone }}</li>
+      <li><i class="fa fa-globe" aria-hidden="true"></i> {{ vm.contact.city }}, {{ vm.contact.state }}</li>
+    </ul>
+  </div>
+</div>

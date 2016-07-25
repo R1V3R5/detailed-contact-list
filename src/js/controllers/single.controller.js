@@ -1,4 +1,4 @@
-function SingleController (ContactService, $stateParams) {
+function SingleController (ContactService, $stateParams, $state) {
 
   let vm = this;
 
@@ -10,7 +10,14 @@ function SingleController (ContactService, $stateParams) {
       console.log(res)
     })
   }
+
+  vm.delete = (id) => {
+    ContactService.deleteContact(id).then( res => {
+      $state.go('root.home');
+    })
+  }
+
 }
 
-SingleController.$inject = ['ContactService', '$stateParams'];
+SingleController.$inject = ['ContactService', '$stateParams', '$state'];
 export { SingleController };

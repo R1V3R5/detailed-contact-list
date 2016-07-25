@@ -5,12 +5,7 @@ function AddController(ContactService, $state) {
   vm.addContact = addContact;
 
   function addContact(contact) {
-    console.log(contact)
-    contact.photoUrl = getPhoto(contact)
-    console.log(contact)
-    ContactService.createContact(contact).then( res => {
-      $state.go('root.home')
-    });
+    getPhoto(contact)
   }
 
   function getPhoto(contact) {
@@ -18,10 +13,20 @@ function AddController(ContactService, $state) {
       url: 'https://randomuser.me/api/',
       dataType: 'json',
       data: {
-        inc: 'picture'
+        inc: 'name, location, email, phone, picture'
       },
       success: function (data) {
-        contact.photoUrl = data.results[0].picture.thumbnail;
+        // let base = data.results[0]
+        // contact.name = base.name.first
+        // contact.phone = base.phone
+        // contact.city = base.location.city
+        // contact.state = base.location.state
+        // contact.email = base.email
+        contact.photoUrl = data.results[0].picture.large;
+        ContactService.createContact(contact).then(res => {
+          $state.go('root.home')
+          // console.log(res)
+        });
       }
     });
   }
