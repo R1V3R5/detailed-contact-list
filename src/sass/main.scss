@@ -1,0 +1,28 @@
+@import "bulma";
+
+img { max-width: 100%; }
+
+.container {
+  width: 630px;
+  margin: 25px auto;
+}
+
+.wrapper {
+  margin: 50px 0;
+}
+
+.card {
+  width: 200px;
+  float: left;
+  margin: 0 15px 15px 0;
+  cursor: pointer;
+  &:nth-child(3n+1) {
+    margin-right: 0;
+  }
+}
+
+.pad-left {
+  padding-left: 10px;
+}
+
+footer { clear: both; padding-top: 25px; }
